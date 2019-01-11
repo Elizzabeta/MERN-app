@@ -45,8 +45,8 @@ ShoppingList.propTypes = {
     item: PropTypes.object.isRequired
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => ({
     item: state.item
-}
+});
 
 export default connect(mapStateToProps, {getItems, deleteItem}) (ShoppingList);

@@ -11,11 +11,11 @@ app.use(bodyParser.json());
 const db = require('./config/db').dbURI;
 
 //Connect to DB
-mongoose.connect(db)
+mongoose.connect(db, {useNewUrlParser: true})
     .then(() => console.log('DB Connected...'))
     .catch(err => console.log(err));
 
 app.use('/api/items', items);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server started on port: ${port}`));
